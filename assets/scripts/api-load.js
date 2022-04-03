@@ -1,14 +1,11 @@
-console.log(moment())
-console.log(1648749600)
 var unixFormat = moment(0).format("MM/DD/YYYY HH:MM");
-console.log(unixFormat);
 class Day{
     constructor(index,dayData){
         this.index = index;
         this.date = moment(dayData.dt*1000).format("MMM Do");
         this.icon = dayData.weather[0].icon;
-        this.low = toFarenheit(dayData.temp.min);
-        this.high = toFarenheit(dayData.temp.max);
+        this.low = Math.round(toFarenheit(dayData.temp.min));
+        this.high = Math.round(toFarenheit(dayData.temp.max));
         this.windSpeed = dayData.wind_speed;
         this.humidity = dayData.humidity;
         this.severity = this.findSeverity(this.low,this.high,this.windSpeed)
@@ -22,7 +19,6 @@ class Day{
         else return "favorable";
     }
 }
-
 
 class WeatherObj{
     constructor(data,city,state){
@@ -78,11 +74,9 @@ const loadWeather = async (location)=>{
     const resp = await fetch(weatherURL);
     const data = await resp.json();
     const weather = new WeatherObj(data,city,state);
-    console.log(data)
     console.log(weather)
+    return weather;
 }
-
-loadWeather("Minneapolis, MN")
 
  function toFarenheit(kel){
      console.log(kel)
