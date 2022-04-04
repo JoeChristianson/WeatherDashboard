@@ -3,7 +3,7 @@ class Day{
     constructor(index,dayData){
         this.index = index;
         this.date = moment(dayData.dt*1000).format("MMM Do");
-        this.icon = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`;
+        this.icon = `https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`;
         this.low = Math.round(toFarenheit(dayData.temp.min));
         this.high = Math.round(toFarenheit(dayData.temp.max));
         this.windSpeed = dayData.wind_speed;
@@ -25,7 +25,7 @@ class WeatherObj{
         this.city = city;
         this.state=state;
         this.currentConditions = data.current.weather[0].main;
-        this.icon = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
+        this.icon = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
         this.currentConditionsDesc = data.current.weather[0].description;
         this.temp = toFarenheit(data.current.temp);
         this.humidity = data.current.humidity;
@@ -67,7 +67,7 @@ const parseLocation = (input)=>{
 }
 const loadWeather = async (location)=>{
     const {city,state,country} = parseLocation(location);
-    const coordURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&appid=${APIkey}`
+    const coordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&appid=${APIkey}`
     const coordResp = await fetch(coordURL);
     const coordData = await coordResp.json()
     const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordData[0].lat}&lon=${coordData[0].lon}&exclude={part}&appid=${APIkey}`;
