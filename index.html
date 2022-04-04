@@ -36,10 +36,13 @@
     <main class="m-2 row text-muted">
       <aside class="col-2">
         <h2>Search for a City</h2>
-        
-        <input class="w-100 custom-input" id="search-input" type="text" />
+        <input
+          class="w-100 custom-input"
+          id="search-input"
+          placeholder="City, State"
+          type="text"
+        />
         <button class="btn w-100" id="search-btn">Search</button>
-
         <hr />
         <div id="past-searches">
           <button class="btn w-100">Atlanta</button>
@@ -49,55 +52,56 @@
       <section class="col-10">
         <section class="text-center">
           <h2>
-            <span id="current-city">Atlanta</span> (
-            <span id="current-date">3/31/2022</span>)
+            <span id="current-city"></span> (
+            <span id="current-date"></span>)
           </h2>
           <image id="current-icon" src="" />
-          <p>Temp: <span id="current-temp">68 deg</span>&#176; F</p>
-          <p>Wind: <span id="current-wind">68 deg</span></p>
-          <p>Humidity: <span id="current-humidity">68 deg</span>%</p>
-          <p>UV Index: <span id="current-uv">68</span></p>
+          <p>Temp: <span id="current-temp"></span>&#176; F</p>
+          <p>Wind: <span id="current-wind"></span></p>
+          <p>Humidity: <span id="current-humidity"></span>%</p>
+          <p>UV Index: <span id="current-uv"></span></p>
         </section>
         <section class="d-flex">
+          <!-- these are all filled dynamically -->
           <article id="card-0" class="card custom-card">
-            <h4 id="date-0">4/1/2022</h4>
+            <h4 id="date-0"></h4>
             <image id="icon-0" />
             <hr />
             <p>Temp: <span id="temp-0"></span>&#176; F</p>
-            <p>Wind: <span id="wind-0">10</span> mph</p>
-            <p>Humidity: <span id="humidity-0">50%</span></p>
+            <p>Wind: <span id="wind-0"></span> mph</p>
+            <p>Humidity: <span id="humidity-0"></span></p>
           </article>
           <article id="card-1" class="card custom-card">
-            <h4 id="date-1">4/1/2022</h4>
+            <h4 id="date-1"></h4>
             <image id="icon-1" />
             <hr />
             <p>Temp: <span id="temp-1"></span>&#176; F</p>
-            <p>Wind: <span id="wind-1">10</span> mph</p>
-            <p>Humidity: <span id="humidity-1">50%</span></p>
+            <p>Wind: <span id="wind-1"></span> mph</p>
+            <p>Humidity: <span id="humidity-1"></span></p>
           </article>
           <article id="card-2" class="card custom-card">
-            <h4 id="date-2">4/1/2022</h4>
+            <h4 id="date-2"></h4>
             <image id="icon-2" />
             <hr />
             <p>Temp: <span id="temp-2"></span>&#176; F</p>
-            <p>Wind: <span id="wind-2">10</span> mph</p>
-            <p>Humidity: <span id="humidity-2">50%</span></p>
+            <p>Wind: <span id="wind-2"></span> mph</p>
+            <p>Humidity: <span id="humidity-2"></span></p>
           </article>
           <article id="card-3" class="card custom-card">
-            <h4 id="date-3">4/1/2022</h4>
+            <h4 id="date-3"></h4>
             <image id="icon-3" />
             <hr />
             <p>Temp: <span id="temp-3"></span>&#176; F</p>
-            <p>Wind: <span id="wind-3">10</span> mph</p>
-            <p>Humidity: <span id="humidity-3">50%</span></p>
+            <p>Wind: <span id="wind-3"></span> mph</p>
+            <p>Humidity: <span id="humidity-3"></span></p>
           </article>
           <article id="card-4" class="card custom-card">
-            <h4 id="date-4">4/1/2022</h4>
+            <h4 id="date-4"></h4>
             <image id="icon-4" />
             <hr />
             <p>Temp: <span id="temp-4"></span>&#176; F</p>
-            <p>Wind: <span id="wind-4">10</span> mph</p>
-            <p>Humidity: <span id="humidity-4">50%</span></p>
+            <p>Wind: <span id="wind-4"></span> mph</p>
+            <p>Humidity: <span id="humidity-4"></span></p>
           </article>
         </section>
       </section>

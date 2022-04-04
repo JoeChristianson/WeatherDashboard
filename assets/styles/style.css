@@ -1,11 +1,17 @@
+:root{
+    --dark:rgb(103, 103, 138);
+    --light:aliceblue;
+}
+
+
 body{
-    background-color: aliceblue;
+    background-color: var(--light);
 }
 
 header{
-    background-image: linear-gradient(rgb(103, 103, 138), aliceblue);
-    color: aliceblue;
-    text-shadow: 2px 2px 4px rgb(103, 103, 138);
+    background-image: linear-gradient(var(--dark), var(--light));
+    color: var(--light);
+    text-shadow: 2px 2px 4px var(--dark);
     border-bottom: 4px solid rgb(108 117 125);
 }
 
@@ -13,7 +19,7 @@ header{
     padding: .6em;
     outline: none;
     border-radius: 5px;
-    border: 1px solid rgb(103, 103, 138);
+    border: 1px solid var(--dark);
     position: relative;
 }
 
@@ -21,12 +27,13 @@ aside{
     position: relative;
 }
 
+/* Tooltip */
 input:focus ~ #search-btn::before {
     font-size: 1.5rem;
     content: "Enter 'City, State'";
     position: absolute;
-    background-color: rgb(103, 103, 138);
-    color: aliceblue;
+    background-color: var(--dark);
+    color: var(--light);
     top: -20px;
     left:50%;
     transform: translateX(-50%);
@@ -38,7 +45,7 @@ input:focus ~ #search-btn::before {
 
 
 button.btn{
-    border: rgb(103, 103, 138) solid 1px;
+    border: var(--dark) solid 1px;
     margin: .3em 0;
     box-shadow: 1px 1px 2px black;
 }

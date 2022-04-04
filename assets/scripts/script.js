@@ -1,8 +1,8 @@
+// Minneapolis is the default search
 const prevSearches = JSON.parse(localStorage.getItem("prevWeatherSearches")) || ["Minneapolis, MN"];
 
 const searchBtn = $("#search-btn");
 const searchInput = $("#search-input")
-
 const currentCity = $('#current-city');
 const currentDate = $("#current-date");
 const currentIcon = $("#current-icon")
@@ -12,24 +12,26 @@ const currentHumidity = $("#current-humidity");
 const currentUV = $("#current-uv");
 
 
-const icons = {
-
-}
-
 const newSearch = async (terms)=>{
     let weather="x";
     let search = terms?terms:(searchInput.val()?searchInput.val():prevSearches[0]);
-    console.log(search)
     weather = await loadWeather(search);
-    console.log(weather);
     currentCity.text(`${weather.city}, ${weather.state}`);
-    console.log(currentDate.text());
     currentDate.text(moment().format("MMM Do"));
     currentIcon.attr("src",weather.icon)
     currentTemp.text(Math.round(weather.temp));
     currentWind.text(weather.windSpeed+ " mph");
     currentHumidity.text(weather.humidity);
     currentUV.text(weather.uvi);
+    let severity;
+    if (weather.uvi<3){
+        severity = "favorable"
+    }
+    else if (weather.uvi<5){
+        severity = "moderate";
+    }
+    else severity = "severe"
+    currentUV.attr("class",severity)
     for(let i = 0;i<5;i++){
         $(`#date-${i}`).text(weather.future[i].date);
         $(`#temp-${i}`).text(`${weather.future[i].low} / ${weather.future[i].high}`)
@@ -40,7 +42,6 @@ const newSearch = async (terms)=>{
     } 
 }
 
-console.log("hey")
 searchBtn.on("click", async e=>{
     await newSearch(false)
     prevSearches.unshift(searchInput.val());
@@ -48,6 +49,7 @@ searchBtn.on("click", async e=>{
     searchInput.val("")
 })
 
+// needed to load the last searched place's weather
 newSearch();
 loadButtons();
 
