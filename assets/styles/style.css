@@ -2,3 +2,15 @@
     width: 20%;
     padding: 1em;
 }
+
+.severe{
+    background-color: red;
+}
+
+.moderate{
+    background-color: yellow;
+}
+
+.favorable{
+    background-color: green;
+}

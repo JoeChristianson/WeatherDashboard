@@ -9,11 +9,11 @@ const currentIcon = $("#current-icon")
 const currentTemp = $("#current-temp");
 const currentWind = $("#current-wind");
 const currentHumidity = $("#current-humidity");
-const currentUV = $("#current-uv")
+const currentUV = $("#current-uv");
 
 
 const icons = {
-    
+
 }
 
 const newSearch = async (terms)=>{
@@ -25,6 +25,7 @@ const newSearch = async (terms)=>{
     currentCity.text(`${weather.city}, ${weather.state}`);
     console.log(currentDate.text());
     currentDate.text(moment().format("MMM Do"));
+    currentIcon.attr("src",weather.icon)
     currentTemp.text(Math.round(weather.temp));
     currentWind.text(weather.windSpeed+ " mph");
     currentHumidity.text(weather.humidity);
@@ -34,10 +35,12 @@ const newSearch = async (terms)=>{
         $(`#temp-${i}`).text(`${weather.future[i].low} / ${weather.future[i].high}`)
         $(`#wind-${i}`).text(`${weather.future[i].windSpeed}`)
         $(`#humidity-${i}`).text(`${weather.future[i].humidity}%`)
+        $(`#icon-${i}`).attr("src",`${weather.future[i].icon}%`)
+        $(`#card-${i}`).attr("class",`card custom-card ${weather.future[i].severity}`)
     } 
 }
 
-console.log(searchInput);
+console.log("hey")
 searchBtn.on("click", async e=>{
     await newSearch(false)
     prevSearches.unshift(searchInput.val());
@@ -57,6 +60,7 @@ function loadButtons(){
             console.log(prevSearches)
             await newSearch(prevSearches[i])
         })
+        btn.addClass("btn custom-button w-100")
         $("#past-searches").append(btn);
     }
 }

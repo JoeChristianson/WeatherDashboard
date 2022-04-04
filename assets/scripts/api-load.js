@@ -3,14 +3,14 @@ class Day{
     constructor(index,dayData){
         this.index = index;
         this.date = moment(dayData.dt*1000).format("MMM Do");
-        this.icon = dayData.weather[0].icon;
+        this.icon = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`;
         this.low = Math.round(toFarenheit(dayData.temp.min));
         this.high = Math.round(toFarenheit(dayData.temp.max));
         this.windSpeed = dayData.wind_speed;
         this.humidity = dayData.humidity;
         this.severity = this.findSeverity(this.low,this.high,this.windSpeed)
     }
-    findSeverity(low,high,wind,uvi){
+    findSeverity(low,high,wind){
         if (low<15||high>95||wind>20)
         return "severe";
         else if(low<55||high>88||wind>10){
@@ -25,8 +25,8 @@ class WeatherObj{
         this.city = city;
         this.state=state;
         this.currentConditions = data.current.weather[0].main;
+        this.icon = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
         this.currentConditionsDesc = data.current.weather[0].description;
-        this.currentConditionsIcon = data.current.weather[0].icon;
         this.temp = toFarenheit(data.current.temp);
         this.humidity = data.current.humidity;
         this.windSpeed = data.current.wind_speed;
