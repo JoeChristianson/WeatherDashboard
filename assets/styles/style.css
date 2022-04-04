@@ -1,16 +1,83 @@
+body{
+    background-color: aliceblue;
+}
+
+header{
+    background-color: rgb(103, 103, 138);
+    color: aliceblue;
+}
+
+button.btn{
+    border: rgb(103, 103, 138) solid 1px;
+    margin: .3em 0;
+    box-shadow: 1px 1px 2px black;
+}
+
+button.btn:hover{
+    background-color: rgb(197, 201, 206);
+}
+
+.text-center p{
+    font-size: 1.8rem;
+}
 .custom-card{
-    width: 20%;
+    width: 18%;
     padding: 1em;
+    margin: auto;
+    box-shadow: 2px 2px 4px black;
+    height: auto;
+}
+
+.custom-card img{
+    width: 30%;
+    margin: auto;
+}
+
+.custom-card p{
+    font-size: 1.4rem;
 }
 
 .severe{
-    background-color: red;
+    background-color: hsl(0, 70%, 80%);
 }
 
 .moderate{
-    background-color: yellow;
+    background-color: hsl(60, 70%, 80%);
 }
 
 .favorable{
-    background-color: green;
+    background-color: hsl(120, 70%, 80%);
 }
+
+@media screen and (max-width:1000px){
+    .custom-card p{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .d-flex{
+        flex-direction: column;
+    }
+    .custom-card p{
+        font-size: 1rem;
+    }
+    .custom-card{
+        text-align: center !important;
+        width: 80%;
+        margin-bottom:2em ;
+    }
+    main{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+    aside{
+        align-self: center !important;
+        width: 50% !important;
+
+    }
+    #past-searches{
+        display: none;
+    }
+  }
