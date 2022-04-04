@@ -3,8 +3,17 @@ body{
 }
 
 header{
-    background-color: rgb(103, 103, 138);
+    background-image: linear-gradient(rgb(103, 103, 138), aliceblue);
     color: aliceblue;
+    text-shadow: 2px 2px 4px rgb(103, 103, 138);
+    border-bottom: 4px solid rgb(108 117 125);
+}
+
+.custom-input{
+    padding: .6em;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(103, 103, 138);
 }
 
 button.btn{
