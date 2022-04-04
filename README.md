@@ -5,7 +5,7 @@
 
 Web App reliant on third party API, openweathermap, to display current and five-day weather conditions for a city of the user's choice.
 
-## details
+## Details
 
 - Displays: Dates, Wind Speeds, Temperatures, Humidity, UV indexes
 - UVI color coded for severity
