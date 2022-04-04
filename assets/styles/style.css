@@ -14,7 +14,28 @@ header{
     outline: none;
     border-radius: 5px;
     border: 1px solid rgb(103, 103, 138);
+    position: relative;
 }
+
+aside{
+    position: relative;
+}
+
+input:focus ~ #search-btn::before {
+    font-size: 1.5rem;
+    content: "Enter 'City, State'";
+    position: absolute;
+    background-color: rgb(103, 103, 138);
+    color: aliceblue;
+    top: -20px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: .3em .5em;
+    border-radius: 5px;
+  }
+
+
 
 button.btn{
     border: rgb(103, 103, 138) solid 1px;
@@ -59,6 +80,10 @@ button.btn:hover{
 }
 
 @media screen and (max-width:1000px){
+
+    h2{
+        text-align: center;
+    }
     .custom-card p{
         font-size: 1rem;
     }
