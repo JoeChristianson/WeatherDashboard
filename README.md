@@ -1,4 +1,4 @@
-# WeatherDashboard
+# Weather Dashboard
 (*P*)
 
 ## Summary
@@ -17,6 +17,8 @@ Web App reliant on third party API, openweathermap, to display current and five-
 ## Screenshot
 
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Tulsa, OK along with other cities in the side search.](screenshot.png)
+
+![Mobile layout.](ss2.png)
 
 ## Live Site
 
