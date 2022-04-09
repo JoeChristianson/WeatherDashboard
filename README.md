@@ -11,8 +11,12 @@ Web App reliant on third party API, openweathermap, to display current and five-
 - UVI color coded for severity
 - Future forecast days are color coded for weather severity
 - Past Searches are saved in local storage and displayed in the sidebar as buttons that can be clicked for a quick search.
-- Bootstrap and jQuery employed.
 - Media Queries make display responsive.
+
+## Tech
+
+- Bootstrap
+- jQuery
 
 ## Screenshot
 
