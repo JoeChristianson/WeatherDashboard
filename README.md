@@ -27,3 +27,7 @@ Web App reliant on third party API, openweathermap, to display current and five-
 ## Live Site
 
 https://joechristianson.github.io/WeatherDashboard/
+
+## License
+
+![](https://img.shields.io/badge/License-MIT-yellowgreen)
